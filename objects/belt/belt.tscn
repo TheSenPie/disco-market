@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://dap73vn77pecc"]
+
+[ext_resource type="Script" uid="uid://b3ayvexrpl3fv" path="res://objects/belt/belt_area.gd" id="1_ge4p8"]
+[ext_resource type="Texture2D" uid="uid://blq5hx13vx37l" path="res://objects/belt/belt.png" id="1_susb0"]
+[ext_resource type="Script" uid="uid://dfloe4xyh3yy0" path="res://objects/belt/belt_mover.gd" id="2_rfspg"]
+[ext_resource type="AudioStream" uid="uid://cc0u28yml4vsw" path="res://assets/snap.ogg" id="4_gx78q"]
+[ext_resource type="Script" uid="uid://d3efr25s8uv1v" path="res://objects/belt/belt_metronom.gd" id="5_l1nsy"]
+[ext_resource type="Script" uid="uid://cmq8nsrpgmdm6" path="res://objects/belt/scan_line.gd" id="6_5rpf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxxgb"]
+size = Vector2(283.249, 91.1793)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l1nsy"]
+b = Vector2(0, 49)
+
+[node name="BeltArea" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_ge4p8")
+
+[node name="Belt" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_susb0")
+centered = false
+region_enabled = true
+region_rect = Rect2(-161401, 0.972, 240.46, 44.863)
+script = ExtResource("2_rfspg")
+working = true
+
+[node name="BeatBox" type="CollisionShape2D" parent="."]
+position = Vector2(112.5, 22)
+scale = Vector2(0.76611, 0.482565)
+shape = SubResource("RectangleShape2D_yxxgb")
+
+[node name="Snap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gx78q")
+script = ExtResource("5_l1nsy")
+
+[node name="ScanLine" type="Area2D" parent="."]
+position = Vector2(221, -2)
+collision_layer = 0
+script = ExtResource("6_5rpf3")
+
+[node name="RedLine" type="Line2D" parent="ScanLine"]
+points = PackedVector2Array(0, 0, 0, 49)
+width = 2.0
+default_color = Color(1, 0.3, 0.3, 1)
+
+[node name="HitBox" type="CollisionShape2D" parent="ScanLine"]
+shape = SubResource("SegmentShape2D_l1nsy")
