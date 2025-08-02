@@ -20,6 +20,8 @@ func _ready() -> void:
 	
 	snap.bpm = bpm
 
+	scan_line.connect( "item_scanned", _handle_item_scanned )
+
 func _physics_process(delta: float) -> void:
 	for item : MarketItem in attached_items:
 		if not item.picked:
@@ -32,3 +34,18 @@ func _handle_area_exited( entity: Area2D ) -> void:
 	var item := attached_items.find( entity )
 	if item >= 0:
 		attached_items.remove_at(item)
+
+func _handle_item_scanned( item: MarketItem ) -> void:
+	var soundPlayer := item.find_child("Sound") as AudioStreamPlayer2D
+	var soundPlayerCopy := soundPlayer.duplicate()
+	item.queue_free()
+
+	add_child(soundPlayerCopy)
+	soundPlayerCopy.play()
+
+	var timer := Timer.new()
+	timer.wait_time = 60.0 / bpm
+	timer.autostart = true
+	timer.one_shot = false
+	timer.timeout.connect( func() -> void: soundPlayerCopy.play() )
+	add_child(timer)
