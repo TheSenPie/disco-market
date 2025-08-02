@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_5ntc1"]
 [ext_resource type="Texture2D" uid="uid://bpmernm0nueoc" path="res://assets/placeholder/Crab.png" id="2_5ntc1"]
-[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="3_54e2c"]
+[ext_resource type="AudioStream" uid="uid://c1vi0yrj04q3y" path="res://assets/conga2.ogg" id="3_5ntc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(121.875, 81.25)
@@ -22,4 +22,4 @@ position = Vector2(1.5625, 0)
 shape = SubResource("RectangleShape2D_h2yge")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_54e2c")
+stream = ExtResource("3_5ntc1")
