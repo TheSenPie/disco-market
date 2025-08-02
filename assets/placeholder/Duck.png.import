@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46ml3u26jfma"
-path="res://.godot/imported/Ballsack.png-8642c0d634cdc77fda9ec2c43c0ba69d.ctex"
+uid="uid://hggdj2sqhwol"
+path="res://.godot/imported/Duck.png-22db22c8c85fdd56f5e716480a8fce2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Ballsack.png"
-dest_files=["res://.godot/imported/Ballsack.png-8642c0d634cdc77fda9ec2c43c0ba69d.ctex"]
+source_file="res://assets/placeholder/Duck.png"
+dest_files=["res://.godot/imported/Duck.png-22db22c8c85fdd56f5e716480a8fce2c.ctex"]
 
 [params]
 

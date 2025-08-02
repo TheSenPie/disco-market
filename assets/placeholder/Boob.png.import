@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byp1isrutvyxg"
-path="res://.godot/imported/Coffee.png-68426c9bd0e00d205c91297975354d02.ctex"
+uid="uid://bv7t8f7rso0x4"
+path="res://.godot/imported/Boob.png-e9018b5d92e8ec98853715649cb38b95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Coffee.png"
-dest_files=["res://.godot/imported/Coffee.png-68426c9bd0e00d205c91297975354d02.ctex"]
+source_file="res://assets/placeholder/Boob.png"
+dest_files=["res://.godot/imported/Boob.png-e9018b5d92e8ec98853715649cb38b95.ctex"]
 
 [params]
 
