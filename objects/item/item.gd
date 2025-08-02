@@ -1,5 +1,7 @@
 class_name MarketItem extends Area2D
 
+signal placed( MarketItem )
+
 @onready var sound: AudioStreamPlayer2D = $Sound
 
 var mouse_over: bool = false
@@ -22,6 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			sound.play()
 		else:
 			picked = false
+			placed.emit(self)
 	
 	if event is InputEventMouseMotion and picked:
 		mouse_pos = event.position
