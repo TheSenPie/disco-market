@@ -7,5 +7,7 @@ func _ready() -> void:
 
 func _handle_area_entered( entity: Area2D ) -> void:
 	assert( entity is MarketItem )
+	if entity.picked:
+		return
 
 	item_scanned.emit( entity )
