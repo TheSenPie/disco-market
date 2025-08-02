@@ -45,25 +45,40 @@ scale = Vector2(1.889, 1.955)
 [node name="Apple" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(290, 294)
 
-[node name="Item" parent="." instance=ExtResource("4_4c57u")]
+[node name="Apple2" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(290, 294)
+
+[node name="Apple3" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(267, 304)
+
+[node name="Ant" parent="." instance=ExtResource("4_4c57u")]
+position = Vector2(338, 328)
+
+[node name="Ant2" parent="." instance=ExtResource("4_4c57u")]
+position = Vector2(314, 329)
+
+[node name="Ant3" parent="." instance=ExtResource("4_4c57u")]
 position = Vector2(327, 330)
 
-[node name="Item2" parent="." instance=ExtResource("5_efxa6")]
+[node name="Balls" parent="." instance=ExtResource("5_efxa6")]
 position = Vector2(281, 339)
 
-[node name="Item3" parent="." instance=ExtResource("6_dg77c")]
+[node name="Boob" parent="." instance=ExtResource("6_dg77c")]
 position = Vector2(309, 341)
 
-[node name="Item4" parent="." instance=ExtResource("7_ycdy4")]
+[node name="Coffee" parent="." instance=ExtResource("7_ycdy4")]
 position = Vector2(332, 273)
 
-[node name="Item5" parent="." instance=ExtResource("8_w48qg")]
+[node name="Crab2" parent="." instance=ExtResource("8_w48qg")]
 position = Vector2(283, 261)
+
+[node name="Crab" parent="." instance=ExtResource("8_w48qg")]
+position = Vector2(303, 255)
 
 [node name="Item6" parent="." instance=ExtResource("9_vivmo")]
 position = Vector2(332, 297)
 
-[node name="Item7" parent="." instance=ExtResource("10_2cqfq")]
+[node name="Duck" parent="." instance=ExtResource("10_2cqfq")]
 position = Vector2(347, 341)
 
 [node name="Food" type="Sprite2D" parent="."]
