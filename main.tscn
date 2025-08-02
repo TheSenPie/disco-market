@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=11 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="3_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://djmf6b47vd8uj" path="res://assets/apple.png" id="3_h2yge"]
-[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="5_lquwl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
-size = Vector2(121.875, 128.125)
+[ext_resource type="PackedScene" uid="uid://7joj6v22pfw7" path="res://objects/item/apple.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c8phfwcg3qysd" path="res://objects/item/ant.tscn" id="4_4c57u"]
+[ext_resource type="PackedScene" uid="uid://e3mk4fd52ry6" path="res://objects/item/balls.tscn" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bvy6voirbslyx" path="res://objects/item/boob.tscn" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://busye05j6kuqb" path="res://objects/item/coffee.tscn" id="7_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://b0d67cgjg26il" path="res://objects/item/crab.tscn" id="8_w48qg"]
+[ext_resource type="PackedScene" uid="uid://c41nufm3sbqhw" path="res://objects/item/cupcake.tscn" id="9_vivmo"]
+[ext_resource type="PackedScene" uid="uid://dlugvi0nglbyr" path="res://objects/item/duck.tscn" id="10_2cqfq"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,18 +22,26 @@ texture = ExtResource("1_ig7tw")
 position = Vector2(384, 249)
 scale = Vector2(1.889, 1.955)
 
-[node name="Item" type="Area2D" parent="."]
+[node name="Apple" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(290, 294)
-scale = Vector2(0.32, 0.32)
-collision_mask = 0
-script = ExtResource("3_1bvp3")
 
-[node name="Apple" type="Sprite2D" parent="Item"]
-texture = ExtResource("3_h2yge")
+[node name="Item" parent="." instance=ExtResource("4_4c57u")]
+position = Vector2(327, 330)
 
-[node name="Hitbox" type="CollisionShape2D" parent="Item"]
-position = Vector2(1.5625, 1.5625)
-shape = SubResource("RectangleShape2D_h2yge")
+[node name="Item2" parent="." instance=ExtResource("5_efxa6")]
+position = Vector2(281, 339)
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="Item"]
-stream = ExtResource("5_lquwl")
+[node name="Item3" parent="." instance=ExtResource("6_dg77c")]
+position = Vector2(309, 341)
+
+[node name="Item4" parent="." instance=ExtResource("7_ycdy4")]
+position = Vector2(332, 273)
+
+[node name="Item5" parent="." instance=ExtResource("8_w48qg")]
+position = Vector2(283, 261)
+
+[node name="Item6" parent="." instance=ExtResource("9_vivmo")]
+position = Vector2(332, 297)
+
+[node name="Item7" parent="." instance=ExtResource("10_2cqfq")]
+position = Vector2(347, 341)
