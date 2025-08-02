@@ -22,6 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			picked = true
 			mouse_pos = event.position
 			sound.play()
+			get_viewport().set_input_as_handled()
 		else:
 			picked = false
 			placed.emit(self)
