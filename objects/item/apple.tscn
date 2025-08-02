@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://7joj6v22pfw7"]
+
+[ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_gdwwg"]
+[ext_resource type="Texture2D" uid="uid://djmf6b47vd8uj" path="res://assets/placeholder/apple.png" id="2_183gc"]
+[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="3_guhbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(121.875, 128.125)
+
+[node name="Item" type="Area2D"]
+scale = Vector2(0.32, 0.32)
+collision_mask = 0
+script = ExtResource("1_gdwwg")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_183gc")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(1.5625, 1.5625)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_guhbm")

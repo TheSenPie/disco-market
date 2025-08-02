@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvy6voirbslyx"]
+
+[ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_4guu7"]
+[ext_resource type="Texture2D" uid="uid://bv7t8f7rso0x4" path="res://assets/placeholder/Boob.png" id="2_4guu7"]
+[ext_resource type="AudioStream" uid="uid://iad88h153vbe" path="res://assets/double_bass.ogg" id="3_4guu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(121.875, 100)
+
+[node name="Item" type="Area2D"]
+scale = Vector2(0.32, 0.32)
+collision_mask = 0
+script = ExtResource("1_4guu7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(12.5, 12.5)
+scale = Vector2(0.561523, 0.610352)
+texture = ExtResource("2_4guu7")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(1.5625, 9.375)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4guu7")

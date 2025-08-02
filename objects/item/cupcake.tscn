@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c41nufm3sbqhw"]
+
+[ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_ri8o5"]
+[ext_resource type="Texture2D" uid="uid://b483ujfkxae7o" path="res://assets/placeholder/Cupcake.png" id="2_ri8o5"]
+[ext_resource type="AudioStream" uid="uid://b4d4er7pwe86j" path="res://assets/chord2.ogg" id="3_ri8o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(121.875, 125)
+
+[node name="Item" type="Area2D"]
+scale = Vector2(0.32, 0.32)
+collision_mask = 0
+script = ExtResource("1_ri8o5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(3.125, 15.625)
+scale = Vector2(0.476074, 0.500488)
+texture = ExtResource("2_ri8o5")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(1.5625, 3.125)
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ri8o5")
