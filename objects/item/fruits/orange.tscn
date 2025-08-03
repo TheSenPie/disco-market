@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dhykkpalock6x"]
 
 [ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_prhy6"]
-[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="2_psbis"]
+[ext_resource type="AudioStream" uid="uid://cxyil6qba6obl" path="res://assets/chord2.ogg" id="2_prhy6"]
 [ext_resource type="Texture2D" uid="uid://bxdhxh3kc80ia" path="res://assets/items/fruits/orange.PNG" id="3_prhy6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
@@ -15,7 +15,7 @@ script = ExtResource("1_prhy6")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 scale = Vector2(0.475, 0.475)
-stream = ExtResource("2_psbis")
+stream = ExtResource("2_prhy6")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.54, 0.54)

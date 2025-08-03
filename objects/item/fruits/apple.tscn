@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8jy2nvf5di2"]
 
 [ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_uww0s"]
-[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="2_1rhnr"]
+[ext_resource type="AudioStream" uid="uid://doa4yo4fsxgwa" path="res://assets/chord.ogg" id="2_uww0s"]
 [ext_resource type="Texture2D" uid="uid://5w4i8reb7fp" path="res://assets/items/fruits/apple.PNG" id="3_uww0s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
@@ -15,7 +15,7 @@ script = ExtResource("1_uww0s")
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 scale = Vector2(0.475, 0.475)
-stream = ExtResource("2_1rhnr")
+stream = ExtResource("2_uww0s")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.485, 0.485)
