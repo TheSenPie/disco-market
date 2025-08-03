@@ -22,14 +22,15 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
-		if event.is_pressed() and mouse_over:
-			picked = true
-			mouse_pos = event.position
-			sound.play()
-			get_viewport().set_input_as_handled()
-		else:
-			picked = false
-			placed.emit(self)
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.is_pressed() and mouse_over:
+				picked = true
+				mouse_pos = event.position
+				sound.play()
+				get_viewport().set_input_as_handled()
+			else:
+				picked = false
+				placed.emit(self)
 	
 	if event is InputEventMouseMotion and picked:
 		mouse_pos = event.position
