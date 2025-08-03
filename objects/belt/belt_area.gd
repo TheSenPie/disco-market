@@ -36,6 +36,10 @@ var bit_width := 0.0
 	$BitOneFour, $BitOneFourSubOne, $BitOneFourSubTwo, $BitOneFourSubThree, $BitTwoFour, $BitTwoFourSubOne, $BitTwoFourSubTwo, $BitTwoFourSubThree, $BitThreeFour, $BitThreeFourSubOne, $BitThreeFourSubTwo, $BitThreeFourSubThree, $BitFourFour, $BitFourFourSubOne, $BitFourFourSubTwo, $BitFourFourSubThree
 ]
 
+var ghosts: Array[MarketItem] = [
+	
+]
+
 func _ready() -> void:
 	four_tact_width = beat_box.shape.get_rect().size.x * scale.x
 	
@@ -118,23 +122,38 @@ func _snap_placed_item( item: MarketItem ) -> void:
 		var bit2 := bits_and_sub_bits[bit_idx + 1]
 		if item_global_pos_x <= bit1.global_position.x and item_global_pos_x > bit2.global_position.x:
 			item.global_position.x = bit1.global_position.x
+			item.bit = bit1
 			return
 
 	if bits_and_sub_bits.size() > 0:
 		var last_bit := bits_and_sub_bits[bits_and_sub_bits.size() - 1]
 		item.global_position.x = last_bit.global_position.x
+		item.bit = last_bit
 
 func _handle_item_scanned( item: MarketItem ) -> void:
-	var soundPlayer := item.find_child("Sound") as AudioStreamPlayer2D
-	var soundPlayerCopy := soundPlayer.duplicate()
-	item.queue_free()
+	# disable scannable capabitliy
+	var area:= item.find_child("BitArea") as Area2D
+	area.set_deferred("monitorable", false)
+	area.set_deferred("monitoring", false)
+	area.queue_free()
+	
+	# turn into a ghost
+	item.ghost = true
+	item.modulate.a = 0.7
+	ghosts.push_back( item )
+	var ghost_idx = ghosts.size() - 1
+	item.killed.connect(
+		func() -> void:
+			ghosts.remove_at(ghost_idx)
+			item.queue_free()
+	)
 
-	add_child(soundPlayerCopy)
-	soundPlayerCopy.play()
+	var soundPlayer := item.find_child("Sound") as AudioStreamPlayer2D
+	soundPlayer.play()
 
 	var timer := Timer.new()
 	timer.wait_time = 60.0 / bpm * 4.0
 	timer.autostart = true
 	timer.one_shot = false
-	timer.timeout.connect( func() -> void: soundPlayerCopy.play() )
-	add_child(timer)
+	timer.timeout.connect( func() -> void: soundPlayer.play() )
+	item.add_child(timer)
