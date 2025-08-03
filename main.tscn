@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=44 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
@@ -30,6 +30,10 @@
 [ext_resource type="Texture2D" uid="uid://c28x1kpmhp0v8" path="res://assets/Sprites/Cats/cuntycat_2.png" id="24_0odxb"]
 [ext_resource type="Texture2D" uid="uid://c8wntjlx6q423" path="res://assets/Sprites/Buttons/paybuttonhover.png" id="25_lswn8"]
 [ext_resource type="Texture2D" uid="uid://c7cotfrv1mo8c" path="res://assets/Sprites/Buttons/paybutton.png" id="26_a6jrf"]
+[ext_resource type="PackedScene" uid="uid://bh21oqrbn7sqf" path="res://objects/item/fruits/strawberry.tscn" id="31_4k2k6"]
+[ext_resource type="PackedScene" uid="uid://dhykkpalock6x" path="res://objects/item/fruits/orange.tscn" id="32_0rl1p"]
+[ext_resource type="PackedScene" uid="uid://dbugxgas7hs05" path="res://objects/item/drinks/coffee.tscn" id="33_ok6jj"]
+[ext_resource type="PackedScene" uid="uid://bebn4snrc8d7r" path="res://objects/item/drinks/cola.tscn" id="34_facbu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cqfq"]
 animations = [{
@@ -114,6 +118,7 @@ texture = ExtResource("26_a6jrf")
 texture = ExtResource("26_a6jrf")
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Preview" type="Sprite2D" parent="."]
 visible = false
@@ -122,25 +127,30 @@ scale = Vector2(1.16764, 1.16722)
 texture = ExtResource("1_ig7tw")
 
 [node name="Background" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(579, 322)
 scale = Vector2(0.600002, 0.600003)
 texture = ExtResource("2_efxa6")
 
 [node name="Furniture" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(579, 321)
 scale = Vector2(0.6, 0.599999)
 texture = ExtResource("3_w48qg")
 
 [node name="Lights" type="Sprite2D" parent="."]
+z_index = 100
 position = Vector2(581, 328)
 scale = Vector2(0.598798, 0.619684)
 texture = ExtResource("4_vivmo")
 
 [node name="Belt" parent="." instance=ExtResource("2_0xm2m")]
+z_index = 3
 position = Vector2(391, 249)
 scale = Vector2(1.889, 1.955)
 
 [node name="Food" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
 texture = ExtResource("14_2cqfq")
@@ -148,6 +158,7 @@ texture = ExtResource("14_2cqfq")
 [node name="Animations" type="Node" parent="."]
 
 [node name="CashierAnimation" type="AnimatedSprite2D" parent="Animations"]
+z_index = 4
 position = Vector2(888, 223)
 scale = Vector2(0.56, 0.588943)
 sprite_frames = SubResource("SpriteFrames_2cqfq")
@@ -156,6 +167,7 @@ frame_progress = 0.998803
 speed_scale = 0.5
 
 [node name="Customer1Animation" type="AnimatedSprite2D" parent="Animations"]
+z_index = 4
 position = Vector2(934, 360)
 scale = Vector2(0.571297, 0.600005)
 sprite_frames = SubResource("SpriteFrames_82xsv")
@@ -164,6 +176,7 @@ frame_progress = 0.945317
 speed_scale = 0.5
 
 [node name="GreedyCatAnimation" type="AnimatedSprite2D" parent="Animations"]
+z_index = 4
 position = Vector2(503, 168)
 scale = Vector2(0.574185, 0.584202)
 sprite_frames = SubResource("SpriteFrames_ryguw")
@@ -171,6 +184,7 @@ autoplay = "default"
 frame_progress = 0.481214
 
 [node name="LostCatAnimation" type="AnimatedSprite2D" parent="Animations"]
+z_index = 4
 position = Vector2(169, 543)
 scale = Vector2(0.600001, 0.6)
 sprite_frames = SubResource("SpriteFrames_1u8w0")
@@ -179,6 +193,7 @@ frame_progress = 0.542182
 speed_scale = 0.05
 
 [node name="CuntyCatAnimation" type="AnimatedSprite2D" parent="Animations"]
+z_index = 4
 position = Vector2(131, 330)
 scale = Vector2(0.599999, 0.599999)
 sprite_frames = SubResource("SpriteFrames_lswn8")
@@ -187,6 +202,7 @@ frame_progress = 0.49122
 speed_scale = 0.1
 
 [node name="Button" type="Button" parent="."]
+z_index = 5
 offset_left = 889.0
 offset_top = 418.0
 offset_right = 897.0
@@ -198,102 +214,68 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_kq58d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_seu75")
 
 [node name="Pretzel" parent="." instance=ExtResource("7_272bh")]
-y_sort_enabled = true
-position = Vector2(262, 338)
+z_index = 10
+position = Vector2(261, 319)
 
 [node name="Item" parent="." instance=ExtResource("8_4c57u")]
-y_sort_enabled = true
-position = Vector2(313, 315)
+z_index = 10
+position = Vector2(287, 323)
 
 [node name="Item2" parent="." instance=ExtResource("9_efxa6")]
-y_sort_enabled = true
-position = Vector2(274, 310)
+z_index = 10
+position = Vector2(318, 319)
 
 [node name="Item4" parent="." instance=ExtResource("10_dg77c")]
-y_sort_enabled = true
-position = Vector2(329, 270)
+z_index = 10
+position = Vector2(344, 322)
 
 [node name="Item3" parent="." instance=ExtResource("11_w48qg")]
-y_sort_enabled = true
-position = Vector2(264, 285)
+z_index = 10
+position = Vector2(254, 296)
 
 [node name="Item5" parent="." instance=ExtResource("12_vivmo")]
-y_sort_enabled = true
-position = Vector2(332, 334)
+z_index = 10
+position = Vector2(300, 303)
 
 [node name="Item6" parent="." instance=ExtResource("13_2cqfq")]
-y_sort_enabled = true
-position = Vector2(351, 299)
-
-[node name="Item8" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-y_sort_enabled = true
-position = Vector2(339, 240)
-script = null
-
-[node name="Item9" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-y_sort_enabled = true
-position = Vector2(281, 235)
-script = null
+z_index = 10
+position = Vector2(279, 301)
 
 [node name="Item10" parent="." instance=ExtResource("17_yaehf")]
+z_index = 10
 y_sort_enabled = true
-position = Vector2(259, 229)
+position = Vector2(268, 252)
 
 [node name="Item11" parent="." instance=ExtResource("18_074og")]
-y_sort_enabled = true
-position = Vector2(313, 233)
+z_index = 10
+position = Vector2(288, 261)
 
 [node name="Item7" parent="." instance=ExtResource("14_yaehf")]
-y_sort_enabled = true
-position = Vector2(303, 266)
+z_index = 10
+position = Vector2(324, 291)
 
 [node name="Item12" parent="." instance=ExtResource("19_cegan")]
-position = Vector2(297, 345)
-
-[node name="Item13" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(338, 351)
-script = null
-
-[node name="Item14" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(268, 353)
-script = null
+z_index = 10
+position = Vector2(262, 339)
 
 [node name="Item15" parent="." instance=ExtResource("22_ryguw")]
-position = Vector2(246, 309)
+z_index = 10
+position = Vector2(280, 344)
 
+[node name="Item8" parent="." instance=ExtResource("31_4k2k6")]
+z_index = 10
+position = Vector2(300, 338)
+
+[node name="Item9" parent="." instance=ExtResource("32_0rl1p")]
+z_index = 10
+position = Vector2(325, 340)
+
+[node name="Item13" parent="." instance=ExtResource("33_ok6jj")]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(310, 259)
+
+[node name="Item14" parent="." instance=ExtResource("34_facbu")]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(333, 265)
