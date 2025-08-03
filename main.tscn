@@ -1,19 +1,27 @@
-[gd_scene load_steps=51 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=56 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Script" uid="uid://ck5j3nfnocsui" path="res://main.gd" id="1_facbu"]
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://biplig1hl5c62" path="res://assets/Sprites/background.png" id="2_efxa6"]
-[ext_resource type="Texture2D" uid="uid://pjvxdr0d7x70" path="res://assets/Sprites/furniture.png" id="3_w48qg"]
-[ext_resource type="Texture2D" uid="uid://dtkege8apx01x" path="res://assets/Sprites/lights.png" id="4_vivmo"]
+[ext_resource type="Texture2D" uid="uid://3qpx76rtj8jx" path="res://assets/Sprites/furniture.png" id="3_w48qg"]
+[ext_resource type="Texture2D" uid="uid://bxh2t7w25cddo" path="res://assets/Sprites/lights.png" id="4_vivmo"]
+[ext_resource type="Texture2D" uid="uid://cj1y316lctjlu" path="res://assets/Sprites/Arrows/greenarrow_1.png" id="6_0rl1p"]
+[ext_resource type="Texture2D" uid="uid://eym4j3bx6sys" path="res://assets/Sprites/Arrows/redarrow_1.png" id="6_4lmeg"]
+[ext_resource type="Texture2D" uid="uid://blvv1pv2x5a5w" path="res://assets/Sprites/Arrows/purplearrow_1.png" id="6_facbu"]
+[ext_resource type="Texture2D" uid="uid://mrtmhwj7qml7" path="res://assets/Sprites/Arrows/redarrow_2.png" id="7_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://7joj6v22pfw7" path="res://objects/item/bread/pretzel.tscn" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://dj5leo81nfkwk" path="res://assets/Sprites/Arrows/purplearrow_2.png" id="7_b1qrp"]
+[ext_resource type="Texture2D" uid="uid://bpqqu4jskorb4" path="res://assets/Sprites/Arrows/greenarrow_2.png" id="7_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cmhmu1mck3ac1" path="res://objects/item/bread/buxanka.tscn" id="8_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dk6fckqxf1ch0" path="res://assets/Sprites/Arrows/yellowarrow_1.png" id="8_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://cdplu7lyfinx0" path="res://objects/item/bread/croissant.tscn" id="9_efxa6"]
+[ext_resource type="Texture2D" uid="uid://csoloygkrgrr2" path="res://assets/Sprites/Arrows/yellowarrow_2.png" id="9_gngh3"]
 [ext_resource type="PackedScene" uid="uid://b3gk2g2ox5n02" path="res://objects/item/bread/loaf.tscn" id="10_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dp6mxlnt81wxl" path="res://objects/item/dairy/butter.tscn" id="11_w48qg"]
 [ext_resource type="PackedScene" uid="uid://1hms02ub4pdp" path="res://objects/item/dairy/cheese.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://c24mjdwgrr3de" path="res://objects/item/dairy/egg.tscn" id="13_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://bpr1mi0io4di0" path="res://assets/Sprites/food.png" id="14_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://cvdul81yxwsfy" path="res://assets/Sprites/food.png" id="14_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://2kg5wb8t2s2a" path="res://objects/item/dairy/milk.tscn" id="14_yaehf"]
 [ext_resource type="Texture2D" uid="uid://bx75cqqiw7o1p" path="res://assets/Sprites/Cats/cat2_2.png" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dxx7ht8tklrph" path="res://assets/Sprites/Cats/cat1_1.png" id="16_2cqfq"]
@@ -37,6 +45,62 @@
 [ext_resource type="PackedScene" uid="uid://dhykkpalock6x" path="res://objects/item/fruits/orange.tscn" id="32_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://dbugxgas7hs05" path="res://objects/item/drinks/coffee.tscn" id="33_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://bebn4snrc8d7r" path="res://objects/item/drinks/cola.tscn" id="34_facbu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0n3wm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4lmeg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0cp0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qnost"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_d2t1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gngh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_come4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_facbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b1qrp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ok6jj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0rl1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ok6jj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cqfq"]
 animations = [{
@@ -172,6 +236,60 @@ z_index = 3
 position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
 texture = ExtResource("14_2cqfq")
+
+[node name="RedArrow" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(595, 27)
+scale = Vector2(0.683486, 0.749321)
+sprite_frames = SubResource("SpriteFrames_0n3wm")
+autoplay = "default"
+frame_progress = 0.373428
+speed_scale = 0.5
+
+[node name="RedArrow2" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(867, 28)
+scale = Vector2(0.634571, 0.685171)
+sprite_frames = SubResource("SpriteFrames_0n3wm")
+autoplay = "default"
+frame_progress = 0.698818
+speed_scale = 0.5
+
+[node name="YellowArrow" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(484, 29)
+scale = Vector2(0.712617, 0.723036)
+sprite_frames = SubResource("SpriteFrames_qnost")
+autoplay = "default"
+frame_progress = 0.0466501
+speed_scale = 0.5
+
+[node name="YellowArrow2" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(113, 435)
+rotation = 1.56826
+scale = Vector2(0.6704, 0.689657)
+sprite_frames = SubResource("SpriteFrames_qnost")
+autoplay = "default"
+frame_progress = 0.893791
+speed_scale = 0.5
+
+[node name="PurpleArrow" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(324, 29)
+scale = Vector2(0.741749, 0.756309)
+sprite_frames = SubResource("SpriteFrames_come4")
+autoplay = "default"
+speed_scale = 0.5
+
+[node name="GreenArrow" type="AnimatedSprite2D" parent="."]
+z_index = 20
+position = Vector2(1024, 23)
+scale = Vector2(0.701645, 0.741865)
+sprite_frames = SubResource("SpriteFrames_ok6jj")
+autoplay = "default"
+frame_progress = 0.798924
+speed_scale = 0.5
 
 [node name="Animations" type="Node" parent="."]
 

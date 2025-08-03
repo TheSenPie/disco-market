@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxh2t7w25cddo"
-path="res://.godot/imported/lights.png-c2d8455b0ac2c3b332c512e92caed80f.ctex"
+uid="uid://dj5leo81nfkwk"
+path="res://.godot/imported/purplearrow_2.png-b6c79b2c59be31883c51cb9e97f04cda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprites/lights.png"
-dest_files=["res://.godot/imported/lights.png-c2d8455b0ac2c3b332c512e92caed80f.ctex"]
+source_file="res://assets/Sprites/Arrows/purplearrow_2.png"
+dest_files=["res://.godot/imported/purplearrow_2.png-b6c79b2c59be31883c51cb9e97f04cda.ctex"]
 
 [params]
 
