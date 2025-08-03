@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3gk2g2ox5n02"]
+
+[ext_resource type="Script" uid="uid://b3sc21xdd8xbm" path="res://objects/item/item.gd" id="1_cuwj8"]
+[ext_resource type="AudioStream" uid="uid://cnlehdjq0e1rt" path="res://assets/conga.ogg" id="2_xb6u5"]
+[ext_resource type="Texture2D" uid="uid://dw28ga27648g5" path="res://assets/items/bread/loaf.PNG" id="3_cuwj8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(81.25, 62.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4sju"]
+size = Vector2(40.625, 62.5)
+
+[node name="Item" type="Node2D"]
+script = ExtResource("1_cuwj8")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(0.475, 0.475)
+stream = ExtResource("2_xb6u5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1.695, 0)
+scale = Vector2(0.435, 0.435)
+texture = ExtResource("3_cuwj8")
+region_rect = Rect2(0, 0, 83.0848, 61.3592)
+
+[node name="MouseArea" type="Area2D" parent="."]
+scale = Vector2(0.475, 0.475)
+collision_mask = 0
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="MouseArea"]
+shape = SubResource("RectangleShape2D_h2yge")
+
+[node name="BitArea" type="Area2D" parent="."]
+scale = Vector2(0.475, 0.475)
+collision_layer = 2
+collision_mask = 0
+
+[node name="BitHitbox" type="CollisionShape2D" parent="BitArea"]
+position = Vector2(-20.3125, 0)
+shape = SubResource("RectangleShape2D_h4sju")
+debug_color = Color(0.722124, 0.246794, 1, 0.42)
