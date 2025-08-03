@@ -6,8 +6,9 @@ func _ready() -> void:
 	area_entered.connect( _handle_area_entered )
 
 func _handle_area_entered( entity: Area2D ) -> void:
-	assert( entity is MarketItem )
-	if entity.picked:
+	var item := entity.get_parent()
+	assert( item is MarketItem )
+	if item.picked:
 		return
 
-	item_scanned.emit( entity )
+	item_scanned.emit( item )

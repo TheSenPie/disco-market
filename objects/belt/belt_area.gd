@@ -94,17 +94,20 @@ func _translate_bit_guide( bit: Line2D, delta: float ) -> void:
 		bit.show()
 
 func _handle_area_entered( entity: Area2D ) -> void:
-	attached_items.push_back( entity )
+	var item := entity.get_parent()
+	attached_items.push_back( item )
 
-	assert( entity is MarketItem )
-	entity.placed.connect( _snap_placed_item )
+	assert( item is MarketItem )
+	item.placed.connect( _snap_placed_item )
 
 func _handle_area_exited( entity: Area2D ) -> void:
-	var item_idx := attached_items.find( entity )
+	var item := entity.get_parent()
+	assert( item is MarketItem )
+	var item_idx := attached_items.find( item )
 	if item_idx >= 0:
-		var item := attached_items[ item_idx ]
-		item.placed.disconnect( _snap_placed_item )
-		item = null
+		var attached_item := attached_items[ item_idx ]
+		attached_item.placed.disconnect( _snap_placed_item )
+		attached_item = null
 
 		attached_items.remove_at(item_idx)
 

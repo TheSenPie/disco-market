@@ -22,7 +22,7 @@ texture_repeat = 2
 texture = ExtResource("1_susb0")
 centered = false
 region_enabled = true
-region_rect = Rect2(-494.558, 0.972, 240.46, 44.863)
+region_rect = Rect2(-472.988, 0.972, 240.46, 44.863)
 script = ExtResource("2_rfspg")
 working = true
 
@@ -37,6 +37,7 @@ script = ExtResource("5_l1nsy")
 [node name="ScanLine" type="Area2D" parent="."]
 position = Vector2(221, -2)
 collision_layer = 0
+collision_mask = 2
 script = ExtResource("6_5rpf3")
 
 [node name="RedLine" type="Line2D" parent="ScanLine"]

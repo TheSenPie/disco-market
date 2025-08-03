@@ -1,6 +1,10 @@
-class_name MarketItem extends Area2D
+class_name MarketItem extends Node2D
 
 signal placed( MarketItem )
+
+@onready var mouse_area: Area2D = $MouseArea
+@onready var bit_area: Area2D = $BitArea
+
 
 @onready var sound: AudioStreamPlayer2D = $Sound
 
@@ -9,8 +13,8 @@ var mouse_pos: Vector2 = Vector2.ZERO
 var picked: bool = false
 
 func _ready() -> void:
-	mouse_entered.connect( func() -> void: mouse_over = true )
-	mouse_exited.connect( func() -> void: mouse_over = false )
+	mouse_area.mouse_entered.connect( func() -> void: mouse_over = true )
+	mouse_area.mouse_exited.connect( func() -> void: mouse_over = false )
 
 func _physics_process(delta: float) -> void:
 	if picked:
