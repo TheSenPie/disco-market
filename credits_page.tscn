@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuo0rgebum1tk"]
+[gd_scene load_steps=6 format=3 uid="uid://cuo0rgebum1tk"]
 
 [ext_resource type="Script" uid="uid://e03ae2un37kr" path="res://credits_page.gd" id="1_dkybi"]
 [ext_resource type="Shader" uid="uid://btfkkax8ss0op" path="res://assets/credits_page.gdshader" id="1_eqq10"]
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="2_22tu3"]
+[ext_resource type="Texture2D" uid="uid://cmxinjrbty4n3" path="res://assets/credits.png" id="4_3t2jd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dkybi"]
 shader = ExtResource("1_eqq10")
@@ -30,40 +31,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = 28.275
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 68.275
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasGroup" type="CanvasGroup" parent="VBoxContainer"]
 material = SubResource("ShaderMaterial_dkybi")
 
-[node name="Label" type="Label" parent="VBoxContainer/CanvasGroup"]
-offset_right = 43.0
-offset_bottom = 23.0
-text = "AAAA"
-
-[node name="Label2" type="Label" parent="VBoxContainer/CanvasGroup"]
-offset_top = 27.0
-offset_right = 43.0
-offset_bottom = 50.0
-text = "AAAA"
-
-[node name="Label3" type="Label" parent="VBoxContainer/CanvasGroup"]
-offset_top = 54.0
-offset_right = 43.0
-offset_bottom = 77.0
-text = "AAAA"
-
-[node name="Label4" type="Label" parent="VBoxContainer/CanvasGroup"]
-offset_top = 81.0
-offset_right = 43.0
-offset_bottom = 104.0
-text = "AAAA"
-
-[node name="Label5" type="Label" parent="VBoxContainer/CanvasGroup"]
-offset_top = 108.0
-offset_right = 43.0
-offset_bottom = 131.0
-text = "AAAA"
+[node name="Credits" type="Sprite2D" parent="VBoxContainer/CanvasGroup"]
+position = Vector2(0, 615)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("4_3t2jd")
