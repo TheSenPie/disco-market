@@ -1,5 +1,6 @@
-[gd_scene load_steps=50 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=51 format=3 uid="uid://dmwrd6otsaew5"]
 
+[ext_resource type="Script" uid="uid://ck5j3nfnocsui" path="res://main.gd" id="1_facbu"]
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://biplig1hl5c62" path="res://assets/Sprites/background.png" id="2_efxa6"]
@@ -135,6 +136,7 @@ texture = ExtResource("21_facbu")
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_facbu")
 
 [node name="Preview" type="Sprite2D" parent="."]
 visible = false
@@ -325,3 +327,5 @@ position = Vector2(310, 259)
 z_index = 10
 y_sort_enabled = true
 position = Vector2(333, 265)
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
