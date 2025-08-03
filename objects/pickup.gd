@@ -16,5 +16,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				var item: MarketItem= item.instantiate()
 				item.z_index = 10
 				item.global_position = event.global_position
+				item.picked = true
+				item.mouse_pos = event.global_position
 				get_tree().get_current_scene().add_child( item )
 				get_viewport().set_input_as_handled()
