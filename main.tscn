@@ -18,6 +18,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Preview" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(577, 323)
 scale = Vector2(1.16764, 1.16722)
 texture = ExtResource("1_ig7tw")
