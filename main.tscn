@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=36 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://d58aqthvse2b" path="res://objects/item/fruits/banana.tscn" id="22_ryguw"]
 [ext_resource type="Texture2D" uid="uid://dnauylpsfwljv" path="res://assets/Sprites/Cats/cuntycat_1.png" id="23_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://c28x1kpmhp0v8" path="res://assets/Sprites/Cats/cuntycat_2.png" id="24_0odxb"]
+[ext_resource type="Texture2D" uid="uid://c8wntjlx6q423" path="res://assets/Sprites/Buttons/paybuttonhover.png" id="25_lswn8"]
+[ext_resource type="Texture2D" uid="uid://c7cotfrv1mo8c" path="res://assets/Sprites/Buttons/paybutton.png" id="26_a6jrf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2cqfq"]
 animations = [{
@@ -99,6 +101,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xuqvo"]
+texture = ExtResource("25_lswn8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qsp4k"]
+texture = ExtResource("25_lswn8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq58d"]
+texture = ExtResource("26_a6jrf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_seu75"]
+texture = ExtResource("26_a6jrf")
+
 [node name="Main" type="Node2D"]
 
 [node name="Preview" type="Sprite2D" parent="."]
@@ -131,7 +145,9 @@ position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
 texture = ExtResource("14_2cqfq")
 
-[node name="CashierAnimation" type="AnimatedSprite2D" parent="."]
+[node name="Animations" type="Node" parent="."]
+
+[node name="CashierAnimation" type="AnimatedSprite2D" parent="Animations"]
 position = Vector2(888, 223)
 scale = Vector2(0.56, 0.588943)
 sprite_frames = SubResource("SpriteFrames_2cqfq")
@@ -139,7 +155,7 @@ autoplay = "default"
 frame_progress = 0.998803
 speed_scale = 0.5
 
-[node name="Customer1Animation" type="AnimatedSprite2D" parent="."]
+[node name="Customer1Animation" type="AnimatedSprite2D" parent="Animations"]
 position = Vector2(934, 360)
 scale = Vector2(0.571297, 0.600005)
 sprite_frames = SubResource("SpriteFrames_82xsv")
@@ -147,14 +163,14 @@ autoplay = "default"
 frame_progress = 0.945317
 speed_scale = 0.5
 
-[node name="GreedyCatAnimation" type="AnimatedSprite2D" parent="."]
+[node name="GreedyCatAnimation" type="AnimatedSprite2D" parent="Animations"]
 position = Vector2(503, 168)
 scale = Vector2(0.574185, 0.584202)
 sprite_frames = SubResource("SpriteFrames_ryguw")
 autoplay = "default"
 frame_progress = 0.481214
 
-[node name="LostCatAnimation" type="AnimatedSprite2D" parent="."]
+[node name="LostCatAnimation" type="AnimatedSprite2D" parent="Animations"]
 position = Vector2(169, 543)
 scale = Vector2(0.600001, 0.6)
 sprite_frames = SubResource("SpriteFrames_1u8w0")
@@ -162,13 +178,24 @@ autoplay = "default"
 frame_progress = 0.542182
 speed_scale = 0.05
 
-[node name="CuntyCatAnimation" type="AnimatedSprite2D" parent="."]
+[node name="CuntyCatAnimation" type="AnimatedSprite2D" parent="Animations"]
 position = Vector2(131, 330)
 scale = Vector2(0.599999, 0.599999)
 sprite_frames = SubResource("SpriteFrames_lswn8")
 autoplay = "default"
 frame_progress = 0.49122
 speed_scale = 0.1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 889.0
+offset_top = 418.0
+offset_right = 897.0
+offset_bottom = 426.0
+scale = Vector2(11.6435, 4.32214)
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_xuqvo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qsp4k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kq58d")
+theme_override_styles/normal = SubResource("StyleBoxTexture_seu75")
 
 [node name="Pretzel" parent="." instance=ExtResource("7_272bh")]
 y_sort_enabled = true
@@ -269,3 +296,4 @@ script = null
 
 [node name="Item15" parent="." instance=ExtResource("22_ryguw")]
 position = Vector2(246, 309)
+

@@ -1,11 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1rw15378hnks"]
+[gd_scene load_steps=23 format=3 uid="uid://b1rw15378hnks"]
 
 [ext_resource type="Texture2D" uid="uid://beavugcmv36t5" path="res://assets/Sprites/menubackground.png" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://cg5x01xka7l37" path="res://main_menu.gd" id="1_jix8l"]
-[ext_resource type="Texture2D" uid="uid://b7ny44l7pihji" path="res://assets/Sprites/startbutton.png" id="2_jix8l"]
-[ext_resource type="Texture2D" uid="uid://d2k4bwwg8wwwg" path="res://assets/Sprites/exitbutton.png" id="3_glbon"]
-[ext_resource type="Texture2D" uid="uid://x473shaxlrla" path="res://assets/Sprites/startbuttonhover.png" id="3_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://c08xe4wx2w7p3" path="res://assets/Sprites/exitbuttonhover.png" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://b7ny44l7pihji" path="res://assets/Sprites/Buttons/startbutton.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://d2k4bwwg8wwwg" path="res://assets/Sprites/Buttons/exitbutton.png" id="3_glbon"]
+[ext_resource type="Texture2D" uid="uid://x473shaxlrla" path="res://assets/Sprites/Buttons/startbuttonhover.png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://c08xe4wx2w7p3" path="res://assets/Sprites/Buttons/exitbuttonhover.png" id="6_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://vklh0xmfkjxs" path="res://assets/Sprites/Buttons/creditsbuttonhover.png" id="7_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://c503p5j6uy5li" path="res://assets/Sprites/Buttons/creditsbutton.png" id="7_qe12f"]
+[ext_resource type="Texture2D" uid="uid://cieyb6t4ran4g" path="res://assets/Sprites/menutext.png" id="9_dy7ct"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
 texture = ExtResource("1_fu7sn")
@@ -21,6 +24,18 @@ texture = ExtResource("2_jix8l")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
 texture = ExtResource("2_jix8l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8g3n"]
+texture = ExtResource("7_8qtwp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u0te"]
+texture = ExtResource("7_8qtwp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiatc"]
+texture = ExtResource("7_qe12f")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm266"]
+texture = ExtResource("7_qe12f")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0k4wn"]
 texture = ExtResource("6_nlkkf")
@@ -73,6 +88,18 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dy7ct")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_iotk1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qe12f")
 
+[node name="credits_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 401.0
+offset_right = 504.0
+offset_bottom = 409.0
+scale = Vector2(14.96, 5.72)
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_g8g3n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8u0te")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oiatc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_cm266")
+
 [node name="exit_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -81,9 +108,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -82.0
-offset_top = 86.0
+offset_top = 126.0
 offset_right = 124.0
-offset_bottom = 159.0
+offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.5888)
@@ -93,6 +120,11 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_0k4wn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j5v2v")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_w44g7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_8qtwp")
+
+[node name="Menutext" type="Sprite2D" parent="."]
+position = Vector2(967, 49)
+scale = Vector2(0.6, 0.580759)
+texture = ExtResource("9_dy7ct")
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_pressed"]
