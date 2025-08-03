@@ -117,7 +117,7 @@ func _handle_area_exited( entity: Area2D ) -> void:
 
 func _snap_placed_item( item: MarketItem ) -> void:
 	var item_global_pos_x := item.global_position.x
-	for bit_idx : int in range( 0, bits_and_sub_bits.size() - 2 ):
+	for bit_idx : int in range( 0, bits_and_sub_bits.size() - 1 ):
 		var bit1 := bits_and_sub_bits[bit_idx]
 		var bit2 := bits_and_sub_bits[bit_idx + 1]
 		if item_global_pos_x <= bit1.global_position.x and item_global_pos_x > bit2.global_position.x:
@@ -157,3 +157,8 @@ func _handle_item_scanned( item: MarketItem ) -> void:
 	timer.one_shot = false
 	timer.timeout.connect( func() -> void: soundPlayer.play() )
 	item.add_child(timer)
+
+func clear_ghosts() -> void:
+	for ghost:MarketItem in ghosts:
+		ghost.queue_free()
+	ghosts.clear()

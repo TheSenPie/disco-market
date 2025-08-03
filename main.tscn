@@ -328,4 +328,5 @@ z_index = 10
 y_sort_enabled = true
 position = Vector2(333, 265)
 
+[connection signal="pressed" from="Pay" to="." method="_on_pay_pressed"]
 [connection signal="pressed" from="Return" to="." method="_on_return_pressed"]
