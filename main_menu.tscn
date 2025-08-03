@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1rw15378hnks"]
+[gd_scene load_steps=23 format=3 uid="uid://b1rw15378hnks"]
 
 [ext_resource type="Texture2D" uid="uid://beavugcmv36t5" path="res://assets/Sprites/menubackground.png" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://cg5x01xka7l37" path="res://main_menu.gd" id="1_jix8l"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c503p5j6uy5li" path="res://assets/Sprites/Buttons/creditsbutton.png" id="6_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://c08xe4wx2w7p3" path="res://assets/Sprites/Buttons/exitbuttonhover.png" id="6_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://vklh0xmfkjxs" path="res://assets/Sprites/Buttons/creditsbuttonhover.png" id="7_8qtwp"]
-[ext_resource type="AudioStream" uid="uid://b0xni0bxg51np" path="res://assets/disco-market_sounds.ogg" id="7_qe12f"]
 [ext_resource type="Texture2D" uid="uid://cieyb6t4ran4g" path="res://assets/Sprites/menutext.png" id="9_dy7ct"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
@@ -136,10 +135,6 @@ position = Vector2(967, 49)
 scale = Vector2(0.6, 0.580759)
 texture = ExtResource("9_dy7ct")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_qe12f")
-autoplay = true
-playback_type = 1
-
 [connection signal="pressed" from="start_button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="exit_button" to="." method="_on_exit_pressed"]

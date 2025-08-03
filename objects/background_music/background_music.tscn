@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b80k8t0ffncdv"]
+
+[ext_resource type="AudioStream" uid="uid://b0xni0bxg51np" path="res://assets/disco-market_sounds.ogg" id="1_jqk15"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_jqk15")
+autoplay = true
+playback_type = 1
