@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://biplig1hl5c62" path="res://assets/Sprites/background.png" id="2_efxa6"]
 [ext_resource type="Texture2D" uid="uid://pjvxdr0d7x70" path="res://assets/Sprites/furniture.png" id="3_w48qg"]
 [ext_resource type="Texture2D" uid="uid://dtkege8apx01x" path="res://assets/Sprites/lights.png" id="4_vivmo"]
+[ext_resource type="PackedScene" uid="uid://7joj6v22pfw7" path="res://objects/item/bread/pretzel.tscn" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://bpr1mi0io4di0" path="res://assets/Sprites/food.png" id="14_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bx75cqqiw7o1p" path="res://assets/Sprites/Cats/cat2_2.png" id="15_vivmo"]
 [ext_resource type="Texture2D" uid="uid://dxx7ht8tklrph" path="res://assets/Sprites/Cats/cat1_1.png" id="16_2cqfq"]
@@ -114,45 +115,6 @@ texture = ExtResource("4_vivmo")
 position = Vector2(391, 249)
 scale = Vector2(1.889, 1.955)
 
-[node name="Apple" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(290, 294)
-
-[node name="Apple2" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(290, 294)
-
-[node name="Apple3" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(267, 304)
-
-[node name="Ant" parent="." instance=ExtResource("4_4c57u")]
-position = Vector2(338, 328)
-
-[node name="Ant2" parent="." instance=ExtResource("4_4c57u")]
-position = Vector2(314, 329)
-
-[node name="Ant3" parent="." instance=ExtResource("4_4c57u")]
-position = Vector2(327, 330)
-
-[node name="Balls" parent="." instance=ExtResource("5_efxa6")]
-position = Vector2(281, 339)
-
-[node name="Boob" parent="." instance=ExtResource("6_dg77c")]
-position = Vector2(309, 341)
-
-[node name="Coffee" parent="." instance=ExtResource("7_ycdy4")]
-position = Vector2(332, 273)
-
-[node name="Crab2" parent="." instance=ExtResource("8_w48qg")]
-position = Vector2(283, 261)
-
-[node name="Crab" parent="." instance=ExtResource("8_w48qg")]
-position = Vector2(303, 255)
-
-[node name="Item6" parent="." instance=ExtResource("9_vivmo")]
-position = Vector2(332, 297)
-
-[node name="Duck" parent="." instance=ExtResource("10_2cqfq")]
-position = Vector2(347, 341)
-
 [node name="Food" type="Sprite2D" parent="."]
 position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
@@ -196,3 +158,6 @@ sprite_frames = SubResource("SpriteFrames_lswn8")
 autoplay = "default"
 frame_progress = 0.49122
 speed_scale = 0.1
+
+[node name="Pretzel" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(309, 277)
