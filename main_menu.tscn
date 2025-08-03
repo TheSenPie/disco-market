@@ -25,13 +25,13 @@ texture = ExtResource("2_jix8l")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qe12f"]
 texture = ExtResource("2_jix8l")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8g3n"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiatc"]
 texture = ExtResource("7_8qtwp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u0te"]
 texture = ExtResource("7_8qtwp")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oiatc"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8g3n"]
 texture = ExtResource("7_qe12f")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cm266"]
@@ -89,15 +89,24 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_iotk1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qe12f")
 
 [node name="credits_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 401.0
-offset_right = 504.0
-offset_bottom = 409.0
-scale = Vector2(14.96, 5.72)
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_g8g3n")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 77.0
+offset_right = 123.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.64)
+theme_override_colors/font_color = Color(0.27451, 0.462745, 0.556863, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_oiatc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8u0te")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_oiatc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g8g3n")
 theme_override_styles/normal = SubResource("StyleBoxTexture_cm266")
 
 [node name="exit_button" type="Button" parent="."]
