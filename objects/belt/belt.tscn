@@ -32,6 +32,7 @@ shape = SubResource("RectangleShape2D_yxxgb")
 
 [node name="Snap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_gx78q")
+volume_db = -20.0
 script = ExtResource("5_l1nsy")
 
 [node name="ScanLine" type="Area2D" parent="."]
