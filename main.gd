@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var belt: Area2D = $Belt
+@onready var chaching: AudioStreamPlayer2D = $Pay/AudioStreamPlayer2D
 
 func _ready() -> void:
 	BackgroundMusic.stop()
@@ -11,3 +12,4 @@ func _on_return_pressed() -> void:
 
 func _on_pay_pressed() -> void:
 	belt.clear_ghosts()
+	chaching.play()

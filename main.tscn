@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=80 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Script" uid="uid://ck5j3nfnocsui" path="res://main.gd" id="1_facbu"]
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bpqqu4jskorb4" path="res://assets/Sprites/Arrows/greenarrow_2.png" id="7_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://cmhmu1mck3ac1" path="res://objects/item/bread/buxanka.tscn" id="8_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dk6fckqxf1ch0" path="res://assets/Sprites/Arrows/yellowarrow_1.png" id="8_d2t1y"]
+[ext_resource type="Script" uid="uid://b0l5rhtri7f03" path="res://objects/pickup.gd" id="8_wnkbs"]
 [ext_resource type="PackedScene" uid="uid://cdplu7lyfinx0" path="res://objects/item/bread/croissant.tscn" id="9_efxa6"]
 [ext_resource type="Texture2D" uid="uid://csoloygkrgrr2" path="res://assets/Sprites/Arrows/yellowarrow_2.png" id="9_gngh3"]
 [ext_resource type="PackedScene" uid="uid://b3gk2g2ox5n02" path="res://objects/item/bread/loaf.tscn" id="10_dg77c"]
@@ -41,10 +42,56 @@
 [ext_resource type="Texture2D" uid="uid://c28x1kpmhp0v8" path="res://assets/Sprites/Cats/cuntycat_2.png" id="24_0odxb"]
 [ext_resource type="Texture2D" uid="uid://c8wntjlx6q423" path="res://assets/Sprites/Buttons/paybuttonhover.png" id="25_lswn8"]
 [ext_resource type="Texture2D" uid="uid://c7cotfrv1mo8c" path="res://assets/Sprites/Buttons/paybutton.png" id="26_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://daqkk6rn06th6" path="res://assets/chaching.ogg" id="28_qnost"]
 [ext_resource type="PackedScene" uid="uid://bh21oqrbn7sqf" path="res://objects/item/fruits/strawberry.tscn" id="31_4k2k6"]
 [ext_resource type="PackedScene" uid="uid://dhykkpalock6x" path="res://objects/item/fruits/orange.tscn" id="32_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://dbugxgas7hs05" path="res://objects/item/drinks/coffee.tscn" id="33_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://bebn4snrc8d7r" path="res://objects/item/drinks/cola.tscn" id="34_facbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnost"]
+size = Vector2(126.667, 211.666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cbny"]
+size = Vector2(126.667, 111.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e71vb"]
+size = Vector2(126.667, 60.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnkwl"]
+size = Vector2(61.6666, 60.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6a44"]
+size = Vector2(126.667, 111.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrvbo"]
+size = Vector2(96.6666, 88.3332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnkbs"]
+size = Vector2(40, 111.667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uypp3"]
+size = Vector2(67.77, 89.247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blkrb"]
+size = Vector2(144.79, 72.027)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abqjc"]
+size = Vector2(61.635, 72.027)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyjs"]
+size = Vector2(126.667, 86.072)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vke2r"]
+size = Vector2(181.667, 65.536)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruth0"]
+size = Vector2(221.667, 65.536)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4w656"]
+size = Vector2(126.667, 86.072)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uit24"]
+size = Vector2(54.9999, 65.536)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0n3wm"]
 animations = [{
@@ -237,6 +284,170 @@ position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
 texture = ExtResource("14_2cqfq")
 
+[node name="egg" type="Area2D" parent="Food"]
+position = Vector2(-890, 120)
+script = ExtResource("8_wnkbs")
+item = ExtResource("13_2cqfq")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/egg"]
+position = Vector2(0, 64.1666)
+shape = SubResource("RectangleShape2D_qnost")
+
+[node name="milk" type="Area2D" parent="Food"]
+position = Vector2(-105, -403.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("14_yaehf")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/milk"]
+position = Vector2(13.3333, 5.83331)
+shape = SubResource("RectangleShape2D_0cbny")
+
+[node name="banana" type="Area2D" parent="Food"]
+position = Vector2(21.6667, -404.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("22_ryguw")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/banana"]
+position = Vector2(13.3333, 5.83331)
+shape = SubResource("RectangleShape2D_0cbny")
+
+[node name="strawberry" type="Area2D" parent="Food"]
+position = Vector2(471.667, -468.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("31_4k2k6")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/strawberry"]
+position = Vector2(13.3334, 31.6667)
+shape = SubResource("RectangleShape2D_e71vb")
+
+[node name="orange" type="Area2D" parent="Food"]
+position = Vector2(470, -351.666)
+script = ExtResource("8_wnkbs")
+item = ExtResource("32_0rl1p")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/orange"]
+position = Vector2(13.3334, 31.6667)
+shape = SubResource("RectangleShape2D_e71vb")
+
+[node name="orange2" type="Area2D" parent="Food"]
+position = Vector2(156.667, -429.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("32_0rl1p")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/orange2"]
+position = Vector2(13.3334, 31.6667)
+shape = SubResource("RectangleShape2D_e71vb")
+
+[node name="strawberry2" type="Area2D" parent="Food"]
+position = Vector2(431.667, -413.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("31_4k2k6")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/strawberry2"]
+position = Vector2(4.16663, 31.6667)
+shape = SubResource("RectangleShape2D_rnkwl")
+
+[node name="cheese" type="Area2D" parent="Food"]
+position = Vector2(-223.333, -404.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("12_vivmo")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/cheese"]
+shape = SubResource("RectangleShape2D_f6a44")
+
+[node name="cola" type="Area2D" parent="Food"]
+position = Vector2(-470, -404.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("34_facbu")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/cola"]
+shape = SubResource("RectangleShape2D_hrvbo")
+
+[node name="wine" type="Area2D" parent="Food"]
+position = Vector2(-398.333, -406.666)
+script = ExtResource("8_wnkbs")
+item = ExtResource("17_yaehf")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/wine"]
+shape = SubResource("RectangleShape2D_wnkbs")
+
+[node name="beer" type="Area2D" parent="Food"]
+position = Vector2(-346.667, -403.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("18_074og")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/beer"]
+shape = SubResource("RectangleShape2D_uypp3")
+
+[node name="butter" type="Area2D" parent="Food"]
+position = Vector2(-383.333, -313.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("11_w48qg")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/butter"]
+shape = SubResource("RectangleShape2D_blkrb")
+
+[node name="coffee" type="Area2D" parent="Food"]
+position = Vector2(-493.333, -314.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("33_ok6jj")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/coffee"]
+shape = SubResource("RectangleShape2D_abqjc")
+
+[node name="loaf" type="Area2D" parent="Food"]
+position = Vector2(675, -439.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("10_dg77c")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/loaf"]
+position = Vector2(13.3333, 5.83331)
+shape = SubResource("RectangleShape2D_6iyjs")
+
+[node name="buxanka" type="Area2D" parent="Food"]
+position = Vector2(673.333, -348.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("8_4c57u")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/buxanka"]
+position = Vector2(40.8333, -4.43469)
+shape = SubResource("RectangleShape2D_vke2r")
+
+[node name="pretzel" type="Area2D" parent="Food"]
+position = Vector2(683.333, -278.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("7_272bh")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/pretzel"]
+position = Vector2(60.8334, -4.43469)
+shape = SubResource("RectangleShape2D_ruth0")
+
+[node name="crossaint" type="Area2D" parent="Food"]
+position = Vector2(801.667, -438.333)
+script = ExtResource("8_wnkbs")
+item = ExtResource("9_efxa6")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/crossaint"]
+position = Vector2(13.3333, 5.83331)
+shape = SubResource("RectangleShape2D_4w656")
+
+[node name="crossaint2" type="Area2D" parent="Food"]
+position = Vector2(836.667, -361.666)
+script = ExtResource("8_wnkbs")
+item = ExtResource("9_efxa6")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/crossaint2"]
+position = Vector2(-1.66671, 6.66663)
+shape = SubResource("RectangleShape2D_uit24")
+
+[node name="coffee2" type="Area2D" parent="Food"]
+position = Vector2(-908.333, 339.999)
+script = ExtResource("8_wnkbs")
+item = ExtResource("33_ok6jj")
+
+[node name="MouseHitbox" type="CollisionShape2D" parent="Food/coffee2"]
+shape = SubResource("RectangleShape2D_abqjc")
+
 [node name="RedArrow" type="AnimatedSprite2D" parent="."]
 z_index = 20
 position = Vector2(595, 27)
@@ -357,6 +568,9 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_facbu")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0cp0l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d2t1y")
 theme_override_styles/normal = SubResource("StyleBoxTexture_gngh3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pay"]
+stream = ExtResource("28_qnost")
 
 [node name="Return" type="Button" parent="."]
 z_index = 10
