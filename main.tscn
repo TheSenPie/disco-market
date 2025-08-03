@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmwrd6otsaew5"]
+[gd_scene load_steps=30 format=3 uid="uid://dmwrd6otsaew5"]
 
 [ext_resource type="Texture2D" uid="uid://cq6wiqlvpd575" path="res://assets/preview.jpg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dap73vn77pecc" path="res://objects/belt/belt.tscn" id="2_0xm2m"]
@@ -14,6 +14,86 @@
 [ext_resource type="PackedScene" uid="uid://c41nufm3sbqhw" path="res://objects/item/cupcake.tscn" id="9_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dlugvi0nglbyr" path="res://objects/item/duck.tscn" id="10_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://bpr1mi0io4di0" path="res://assets/Sprites/food.png" id="14_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://bx75cqqiw7o1p" path="res://assets/Sprites/Cats/cat2_2.png" id="15_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dxx7ht8tklrph" path="res://assets/Sprites/Cats/cat1_1.png" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://dgbp5ss0c1j5i" path="res://assets/Sprites/Cats/customer1_1.png" id="17_074og"]
+[ext_resource type="Texture2D" uid="uid://dg4aulwcb344l" path="res://assets/Sprites/Cats/customer1_2.png" id="18_cegan"]
+[ext_resource type="Texture2D" uid="uid://c5yog3ckfhec3" path="res://assets/Sprites/Cats/greedycat_2.png" id="19_82xsv"]
+[ext_resource type="Texture2D" uid="uid://bnls5km5ybalj" path="res://assets/Sprites/Cats/greedycat_1.png" id="20_getpj"]
+[ext_resource type="Texture2D" uid="uid://54xt5fco6w30" path="res://assets/Sprites/Cats/lostcat_2.png" id="21_ryguw"]
+[ext_resource type="Texture2D" uid="uid://cfqvhkhr0jqd4" path="res://assets/Sprites/Cats/lostcat_1.png" id="22_d13ii"]
+[ext_resource type="Texture2D" uid="uid://dnauylpsfwljv" path="res://assets/Sprites/Cats/cuntycat_1.png" id="23_1u8w0"]
+[ext_resource type="Texture2D" uid="uid://c28x1kpmhp0v8" path="res://assets/Sprites/Cats/cuntycat_2.png" id="24_0odxb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cqfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vivmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2cqfq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_82xsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_cegan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ryguw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_getpj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1u8w0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_d13ii")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lswn8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_1u8w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0odxb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Main" type="Node2D"]
 
@@ -85,3 +165,42 @@ position = Vector2(347, 341)
 position = Vector2(582, 325)
 scale = Vector2(0.6, 0.600001)
 texture = ExtResource("14_2cqfq")
+
+[node name="CashierAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(888, 223)
+scale = Vector2(0.56, 0.588943)
+sprite_frames = SubResource("SpriteFrames_2cqfq")
+autoplay = "default"
+frame_progress = 0.998803
+speed_scale = 0.5
+
+[node name="Customer1Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(934, 360)
+scale = Vector2(0.571297, 0.600005)
+sprite_frames = SubResource("SpriteFrames_82xsv")
+autoplay = "default"
+frame_progress = 0.945317
+speed_scale = 0.5
+
+[node name="GreedyCatAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(503, 168)
+scale = Vector2(0.574185, 0.584202)
+sprite_frames = SubResource("SpriteFrames_ryguw")
+autoplay = "default"
+frame_progress = 0.481214
+
+[node name="LostCatAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(169, 543)
+scale = Vector2(0.600001, 0.6)
+sprite_frames = SubResource("SpriteFrames_1u8w0")
+autoplay = "default"
+frame_progress = 0.542182
+speed_scale = 0.05
+
+[node name="CuntyCatAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(131, 330)
+scale = Vector2(0.599999, 0.599999)
+sprite_frames = SubResource("SpriteFrames_lswn8")
+autoplay = "default"
+frame_progress = 0.49122
+speed_scale = 0.1
