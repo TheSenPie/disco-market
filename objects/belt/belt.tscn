@@ -22,7 +22,7 @@ texture_repeat = 2
 texture = ExtResource("1_susb0")
 centered = false
 region_enabled = true
-region_rect = Rect2(-472.988, 0.972, 240.46, 44.863)
+region_rect = Rect2(-845.978, 0.972, 240.46, 44.863)
 script = ExtResource("2_rfspg")
 working = true
 
